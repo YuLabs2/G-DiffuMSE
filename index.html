@@ -1,1 +1,1196 @@
-<1>Welcome</h1>
+<head>
+  <link rel="stylesheet" href="styles copy.css">
+</head>
+
+<h1>Performance of STGCN on circles and rectangular array in different scenes</h1>
+<h2>Prove the adaptability of STGCN to different arrays and scenes</h2>
+<div>
+    <p>
+      <b style="font-size: 22px;">Conclusion： </b> <br>
+      <b>1)</b> In the rectangular array of CHiME3, STGCN improves 52% compared with noisy speech, 11% compared with optimal baseline (CNN), and 1 9% compared with UNet-GCN.<br>
+      <b>2)</b> In the circle array of cocktail party, STGCN improves 28% compared with noisy speech, 13% compared with optimal baseline (CNN), and 15% compared with UNet-GCN.<br>
+      <b>3)</b> From the experimental results, it can be demonstrated that STGCN improves the quality of target signal on both rectangular and circular arrays, proving that multi-dimensional graph convolution can achieve array topology adaption.
+    </p>
+  </div>
+  <div align="center">
+    <img
+    width="70%"
+    class="fit-picture"
+    src="table3-1.png" />
+</div>
+
+<div align="center">
+  <p class="wavlink">
+      <h3><a href="#3-方针和圆阵-矩形阵列-CHIME3">Wav-rectangular array-CHIME3</a></h3> 
+  </p>
+</div>
+
+<div align="center">
+  <img
+  width="70%"
+  class="fit-picture"
+  src="table3-2.png" />
+</div>
+
+  <!-- <p class="table-name"><strong>Table 2</strong> PESQ of STGCCN on the circular array for cocktail party</p>
+  
+  <table class="my-table2">
+    <thead>
+      <tr>
+        <th>Input SNR</th>
+        <th>-4dB</th>
+        <th>-3dB</th>
+        <th>-2dB</th>
+        <th>Avg.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Noisy(channel)</td>
+        <td>1.161</td>
+        <td>1.303</td>
+        <td>1.633</td>
+        <td>1.366</td>
+      </tr>
+      <tr>
+        <td>CNN</td>
+        <td>1.347±0.246</td>
+        <td>1.530±0.270</td>
+        <td>1.753±0.270</td>
+        <td>1.543±0.311</td>
+      </tr>
+      <tr>
+        <td>UNet-GCN</td>
+        <td>1.287±0.208</td>
+        <td>1.574±0.241</td>
+        <td>1.716±0.280</td>
+        <td>1.526±0.243</td>
+      </tr>
+      <tr>
+        <td>STGCCN+<i>L<sub>MSE</sub></i></td>
+        <td><b>1.514±0.346</b></td>
+        <td><b>1.751±0.351</b></td>
+        <td><b>1.978±0.334</b></td>
+        <td><b>1.748±0.392</b></td>
+      </tr>
+    </tbody>
+  </table> -->
+
+<div align="center">
+  <p class="wavlink">
+    <h3><a href="#3-方针和圆阵-圆阵-cocktail party">Wav- circle array-cocktail party</a></h3> 
+  </p>
+</div>
+
+  <h3>Wav-rectangular array-CHIME3</h3>
+  <div  class="table-name">
+    <strong>BUS</strong> 
+  </div>
+  <div class="table-container">
+    <table  id="3-方针和圆阵-矩形阵列-CHIME3">
+
+      <!-- <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+        <th>noisy-LSTM-IPD</th>
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th> 
+       </th>  -->
+      <tr>
+        <td>
+          Clean
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_clean_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_noisy_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          LSTM-IPD
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          STGCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_1_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_0_2_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_0_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\BUS\FileID_12_1_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div  class="table-name">
+    <strong>CAF</strong> 
+  </div>
+  <div class="table-container">
+    <table  >
+
+      <!-- <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+        <th>noisy-LSTM-IPD</th>
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th> 
+       </th>  -->
+      <tr>
+        <td>
+          Clean
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          LSTM-IPD
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          STGCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_0_1_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_12_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\CAF\FileID_18_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div  class="table-name">
+    <strong>PED</strong> 
+  </div>
+  <div class="table-container">
+    <table>
+
+      <!-- <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+        <th>noisy-LSTM-IPD</th>
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th> 
+       </th>  -->
+      <tr>
+        <td>
+          Clean
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          LSTM-IPD
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          STGCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_0_1_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_12_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\PED\FileID_18_0_noisy_1c_out_STGCN_mask_5b_256F_minidata_.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div  class="table-name">
+    <strong>STR</strong> 
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <td>
+          Clean
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_clean_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_clean_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Noisy
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_noisy_1c.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_noisy_1c.wav"></audio>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          CNN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_noisy_1c_out_CNN_5_5____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          LSTM-IPD
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_noisy_1c_out_lstm_ipd_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          UNet-GCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_noisy_1c_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          STGCN
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_0_0_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_0_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_1_noisy_1c_out_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\矩形阵列-CHIME3\STR\FileID_12_2_noisy_1c_out_STGCN_DM-STGCN_A2_Dy_Q.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+<!-- ############################################ 圆阵##################################################### -->
+<h3>Wav- circle array-cocktail party</h3>
+  <div  class="table-name">
+    <strong>Wav- circle array-cocktail party-SNR-2</strong> 
+  </div>
+  <div class="table-container">
+    <table  id="3-方针和圆阵-圆阵-cocktail party" class="wav1">
+      <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+       
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th>
+        
+       </th> 
+       
+      <tr>
+        <td>
+         sample1
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Clean_file_ID_2_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_2_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_CNN_file_ID_2_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_2_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_DM-STGCN_A2_Dy_Q_file_ID_2_1.wav"></audio>
+          </div>
+        </td>        
+      </tr>
+
+      <tr>
+        <td>
+          sample2
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Clean_file_ID_206_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_206_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_CNN_file_ID_206_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_206_0_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_DM-STGCN_A2_Dy_Q_file_ID_206_0.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample3
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Clean_file_ID_523_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_523_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_CNN_file_ID_523_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_523_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_DM-STGCN_A2_Dy_Q_file_ID_523_1.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample4
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Clean_file_ID_523_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_523_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_CNN_file_ID_523_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\Noisy_file_ID_523_2_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-2\enhanced_DM-STGCN_A2_Dy_Q_file_ID_523_2.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div  class="table-name">
+    <strong>Wav- circle array-cocktail party-SNR-3</strong> 
+  </div>
+  <div class="table-container">
+    <table   class="wav1">
+      <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+       
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th>
+        
+       </th> 
+       
+      <tr>
+        <td>
+         sample1
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Clean_file_ID_3_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_3_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_CNN_file_ID_3_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_3_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_DM-STGCN_A2_Dy_Q_file_ID_3_1.wav"></audio>
+          </div>
+        </td>        
+      </tr>
+
+      <tr>
+        <td>
+          sample2
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Clean_file_ID_3_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_3_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_CNN_file_ID_3_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_3_2_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_DM-STGCN_A2_Dy_Q_file_ID_3_2.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample3
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Clean_file_ID_675_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_675_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_CNN_file_ID_675_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_675_0_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_DM-STGCN_A2_Dy_Q_file_ID_675_0.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample4
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Clean_file_ID_809_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_809_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_CNN_file_ID_809_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\Noisy_file_ID_809_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-3\enhanced_DM-STGCN_A2_Dy_Q_file_ID_809_1.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  
+  <div  class="table-name">
+    <strong>Wav- circle array-cocktail party-SNR-4</strong> 
+  </div>
+  <div class="table-container">
+    <table   class="wav1">
+      <th>
+        <th>clean</th>
+        <th>noisy</th>
+        <th>noisy-CNN</th>
+       
+        <th>noisy-UNet-GCN</th>
+        <th>noisy-STGCN</th>
+        
+       </th> 
+       
+      <tr>
+        <td>
+         sample1
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Clean_file_ID_226_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_226_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_CNN_file_ID_226_0.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_226_0_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_DM-STGCN_A2_Dy_Q_file_ID_226_0.wav"></audio>
+          </div>
+        </td>        
+      </tr>
+
+      <tr>
+        <td>
+          sample2
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Clean_file_ID_226_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_226_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_CNN_file_ID_226_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_226_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_DM-STGCN_A2_Dy_Q_file_ID_226_1.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample3
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Clean_file_ID_1101_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_1101_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_CNN_file_ID_1101_2.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_1101_2_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_DM-STGCN_A2_Dy_Q_file_ID_1101_2.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          sample4
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Clean_file_ID_1154_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_1154_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_CNN_file_ID_1154_1.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\Noisy_file_ID_1154_1_out_UNet_GCN_____.wav"></audio>
+          </div>
+        </td>
+        <td>
+          <div>
+            <audio controls src="wav\3-方针和圆阵\圆阵-cocktail party\SNR-4\enhanced_DM-STGCN_A2_Dy_Q_file_ID_1154_1.wav"></audio>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  
