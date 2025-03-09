@@ -159,3 +159,8 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+h1, h2 ,h3{
+  text-align: center; /* 文本居中对齐 */
+  margin: 0 auto; /* 水平居中 */
+  width: 80%; /* 设置宽度，避免内容过长 */
+}
