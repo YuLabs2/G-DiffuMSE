@@ -1,4 +1,4 @@
- /* 表格样式1 */
+/*  /* 表格样式1 */
  .my-table {
     width: 100%;
     border-collapse: collapse;
@@ -107,7 +107,7 @@
   .my-table2 td:nth-child(4) {
   border-right: 1.5px solid black;
   }
-
+ */
   /* 表格样式3 wav存放 */
   .wav1 {
     width: 80%;
