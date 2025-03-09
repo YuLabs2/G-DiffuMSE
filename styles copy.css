@@ -161,8 +161,17 @@
 }
 
 /* 标题居中 */
-h1, h2, h3 {
+h1 {
   text-align: center; /* 文本居中对齐 */
+  margin: 0 auto; /* 水平居中 */
+  width: 80%; /* 设置宽度，避免内容过长 */
+  font-size: 28px; /* 标题字体大小 */
+}
+
+/* Authors 和 Submitted to 的字体大小一致 */
+.authors, .conference {
+  text-align: center; /* 居中对齐 */
+  font-size: 18px; /* 字体大小调整为18px */
   margin: 0 auto; /* 水平居中 */
   width: 80%; /* 设置宽度，避免内容过长 */
 }
@@ -173,15 +182,8 @@ h1, h2, h3 {
   font-weight: normal; /* 不粗体 */
 }
 
-/* 会议信息斜体居中不粗体 */
-.conference {
-  font-style: italic; /* 斜体 */
-  font-weight: normal; /* 不粗体 */
-  text-align: center; /* 居中对齐 */
-}
-
 /* Wav samples 标题字体变大 */
 .wav-title {
-  font-size: 24px; /* 字体大小调整为24px */
+  font-size: 22px; /* 字体大小调整为22px */
   font-weight: bold; /* 加粗 */
 }
